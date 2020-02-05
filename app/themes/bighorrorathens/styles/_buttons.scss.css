@@ -1,0 +1,92 @@
+.btn {
+  position: relative;
+  transform: translate3d(0,0,0);
+
+  display: inline-block;
+
+  margin-right: 2.2em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 0.075em;
+
+  padding: 1em 0;
+  user-select: none;
+
+  .copy-line {
+    height: auto;
+    padding: 1em 0 0 0;
+  }
+
+  &:hover {
+
+    .btn__line {
+      /*animation: tongue 1s cubic-bezier(0.46, 0.03, 0.52, 0.96) 0s infinite;*/
+    }
+  }
+
+  #projects & {
+
+    .btn__line {
+      bottom: -30px;
+      height: 30px;
+    }
+  }
+
+  @include media('<ipad-portrait') {
+    border-bottom: 1px solid black;
+
+    &__line {
+      display: none;
+    }
+  }
+
+  @include media('>=ipad-portrait') {
+
+    &__line {
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+
+      display: block;
+      height: 100px;
+      width: 100%;
+
+      &:nth-of-type(1) {
+        background: cyan;
+      }
+
+      &:nth-of-type(2) {
+        background: magenta;
+      }
+
+      &:nth-of-type(3) {
+        background: yellow;
+      }
+
+      &:nth-of-type(4) {
+        background: black;
+      }
+    }
+  }
+
+  @include media('>=small-laptop') {
+    font-size: 12px;
+  }
+}
+
+@keyframes tongue {
+  0% {
+  }
+
+  50% {
+    transform: scaleY(0.4);
+  }
+
+  100% {
+  }
+}
+

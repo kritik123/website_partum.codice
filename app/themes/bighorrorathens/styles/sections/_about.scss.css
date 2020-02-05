@@ -1,0 +1,206 @@
+/* ======================================================================
+ * ABOUT
+ * ====================================================================== */
+
+#about {
+  background: black;
+
+
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  
+
+  .t-copy-xl {
+    font-size: 30px;
+    letter-spacing: 0.05em;
+  }
+
+  .t-copy-md {
+    font-size: 15px;
+  }
+
+  @include media('>=ipad-portrait') {
+    opacity: 0;
+    visibility: hidden;
+
+    .t-copy-xl {
+      font-size: 36px;
+
+      .copy-line {
+        margin: 0.2em 0;
+      }
+    }
+
+    .t-copy-md {
+      font-size: 18px;
+    }
+  }
+}
+
+.about-content {
+
+  &__left {
+    margin-bottom: 3em;
+  }
+
+  .awards {
+    list-style: none;
+    margin: 0;
+    margin-top: -0.6em;
+    margin-left: 64px;
+    font-size: 14px;
+    padding: 0;
+
+    a,span {
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 0.6em 0;
+      display: block;
+
+      // &:hover {
+      //   animation: anima 0.5s ease 0s infinite;
+      // }
+    }
+  }
+
+  @include media( '>=ipad-portrait' ) {
+    justify-content: center;
+
+    &__left {
+      width: 450px;
+    }
+
+    .awards {
+      margin-left: 94px;
+    }
+  }
+
+  @include media( '>=ipad-landscape' ) {
+    justify-content: flex-start;
+
+    &__wrapper {
+      display: flex;
+      // margin-left: -6.5%;
+      align-items: top;
+      justify-content: center;
+      width: 100%;
+    }
+
+    &__left {
+      width: 460px;
+    }
+
+    &__right {
+      margin-left: 123px;
+      height: 268px;
+    }
+
+  }
+}
+
+#about-link,
+#back-link {
+  display: none;
+
+  @include media('>=ipad-portrait') {
+    display: block;
+    
+    span {
+      transition: $trn-fs-linear;
+    }
+
+    &:hover {
+
+      span {
+        opacity: 0.4;
+      }
+    }
+  }
+}
+
+#back-link {
+  color: white;
+}
+
+@keyframes anima {
+  0% {
+    text-shadow: 
+                 -1px 1px 0 cyan,
+                 -2px 2px 0 cyan,
+                 -3px 2px 0 magenta,
+                 -4px 4px 0 magenta,
+                 -5px 5px 0 yellow,
+                 -6px 6px 0 yellow;
+  }
+
+  16.666% {
+    text-shadow:
+                 -1px 1px 0 yellow,
+                 -2px 2px 0 cyan,
+                 -3px 2px 0 cyan,
+                 -4px 4px 0 magenta,
+                 -5px 5px 0 magenta,
+                 -6px 6px 0 yellow;
+  }
+
+  33.333% {
+    text-shadow: 
+                 -1px 1px 0 yellow,
+                 -2px 2px 0 yellow,
+                 -3px 2px 0 cyan,
+                 -4px 4px 0 cyan,
+                 -5px 5px 0 magenta,
+                 -6px 6px 0 magenta;
+  }
+
+  50% {
+    text-shadow: 
+                 -1px 1px 0 magenta,
+                 -2px 2px 0 yellow,
+                 -3px 2px 0 yellow,
+                 -4px 4px 0 cyan,
+                 -5px 5px 0 cyan,
+                 -6px 6px 0 magenta;
+  }
+
+  66.666% {
+    text-shadow: 
+                 -1px 1px 0 magenta,
+                 -2px 2px 0 magenta,
+                 -3px 2px 0 yellow,
+                 -4px 4px 0 yellow,
+                 -5px 5px 0 cyan,
+                 -6px 6px 0 cyan;
+  }
+
+  83.333% {
+    text-shadow: 
+                 -1px 1px 0 cyan,
+                 -2px 2px 0 magenta,
+                 -3px 2px 0 magenta,
+                 -4px 4px 0 yellow,
+                 -5px 5px 0 yellow,
+                 -6px 6px 0 cyan;
+  }
+
+  100% {
+    text-shadow: 
+                 -1px 1px 0 cyan,
+                 -2px 2px 0 cyan,
+                 -3px 2px 0 magenta,
+                 -4px 4px 0 magenta,
+                 -5px 5px 0 yellow,
+                 -6px 6px 0 yellow;
+  }
+}
+
+.diagonals {
+
+  #about & {
+
+    .line {
+      border-color: #1a1a1a;
+    }
+  }
+}

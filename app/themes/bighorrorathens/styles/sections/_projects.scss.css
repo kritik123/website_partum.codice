@@ -1,0 +1,353 @@
+/* ======================================================================
+ * PROJECTS
+ * ====================================================================== */
+
+#projects {
+  background:  white;
+
+  @include media('>=ipad-portrait') {
+    perspective: 2000px;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/*
+ * Project Content
+ */
+.project-content {
+
+  &__desc {
+    margin-top: 40px;
+    position: relative;
+  }
+
+  @include media('<ipad-portrait') {
+    padding-top: 30px;
+  }
+
+  @include media('>=ipad-portrait') {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+
+    &__shape {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+
+    &__desc {
+      position: relative;
+      width: 380px;
+      padding-right: 20px;
+      margin: 0 auto;
+      margin-top: 40px;
+      z-index: 0;
+    }
+
+    &.active {
+
+      .project-content__desc {
+        z-index: 9;
+      }
+    }
+  }
+
+  @include media('>=ipad-landscape') {
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+
+    &__shape {
+      width: calc(100% - 320px);
+      max-width: none;
+      padding-right: 6.5%;
+    }
+
+    &__shape,
+    &__desc {
+      display: flex;
+      align-items: center;
+    }
+
+    &__desc {
+      width: 320px;
+      margin-top: 0;
+    }
+  }
+
+  @include media('>=small-laptop') {
+
+    &__shape {
+      width: calc(100% - 450px);
+      max-width: none;
+      padding-right: 6.5%;
+    }
+
+    &__desc {
+      width: 450px;
+    }
+  }
+}
+
+
+
+/* -----------------------------------
+ * SHAPE MASK
+ * ----------------------------------- */
+
+.shape-mask {
+  position: relative;
+
+  width: 100%;
+
+  mix-blend-mode: multiply;
+  transform: translate3d(0,0,0);
+
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 62.5%;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -2px;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    width: 5px;
+    background: white;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 120%;
+    height: 120%;
+
+    transform: translate(-10%, -10%);
+
+  }
+
+  &__screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 102%;
+    margin-top: -1%;
+    background: white;
+    mix-blend-mode: screen;
+    overflow: hidden;
+    perspective: 600px;
+
+    .outer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: center center;
+
+      &:nth-child(1) {
+        width: 16%;
+        height: 41%;
+        transform: skew(-45deg) translate3d(175%, 22%, 0);
+      }
+
+      &:nth-child(2) {
+        width: 25%;
+        height: 90%;
+        transform: skew(-45deg) translate3d(134%, 5%, 0);
+      }
+
+      &:nth-child(3) {
+        width: 23.5%;
+        height: 65.6%;
+        transform: skew(-45deg) translate3d(306%, 40%, 0);
+      }
+
+    }
+
+    .inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+
+      @include media('>=ipad-portrait') {
+        transform: scaleY(0) translate3d(0,0,0);
+      }
+    }
+  }
+}
+
+html.no-backgroundblendmode {
+
+  .shape-mask {
+    opacity: 0;
+
+    img, .shape-mask__screen {
+      display: none !important;
+    }
+  }
+
+  .shape-svg image {
+    display: block !important;
+  }
+}
+
+
+.shape-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  html.backgroundblendmode & {
+    display: none;
+  }
+}
+
+
+/*
+ * Projects Navigation
+ */
+
+.projects-nav {
+  position: fixed;
+  top: 50%;
+  right: 0;
+
+  transform: translate( 0, -50% );
+
+  a {
+    display: block;
+    padding: 15px 30px;
+
+    svg {
+      // opacity: 0;
+    }
+
+    svg, polygon {
+      transition: all .125s;
+    }
+
+    &.arrow-next {
+
+      svg {
+
+        transform: rotate( 180deg );
+      }
+    }
+  }
+}
+
+
+/* ======================================================================
+ * STRIPES
+ * ====================================================================== */
+
+.stripes {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  visibility: hidden;
+  
+  .stripe {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    mix-blend-mode: darken;
+    transform: skew(-45deg);
+
+    &__inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      transform: scaleY(0);
+      transform-origin: bottom;
+      background: black;
+    }
+
+    &:nth-child(1) {
+      right: 75%;
+      width: calc(25vw + ( (100vh - 526px) * 0.5));
+    }
+
+    &:nth-child(2) {
+      left: calc(25% - 2px);
+      width: calc(50vw + 4px);
+
+      .stripe__inner {
+        transform-origin: top;
+      }
+    }
+
+    &:nth-child(3) {
+      left: 75%;
+      width: calc(25vw + ( (100vh - 526px) * 0.5));
+    }
+  }
+}
+
+
+.diagonals {
+  display: none;
+  pointer-events: none;
+
+  .line {
+    position: absolute;
+    top: 0;
+    border-left: 3px solid #f2f2f2;
+    width: 0;
+    height: 100%;
+    z-index: 0;
+
+    transform: skew( -45deg );
+
+    &:nth-child( 1 ) {
+      left: 260px;
+      transform-origin: center top;
+    }
+
+    &:nth-child( 2 ) {
+      left: 25%;
+    }
+
+    &:nth-child( 3 ) {
+      left: 75%;
+    }
+
+    &:nth-child( 4 ) {
+      right: 260px;
+      transform-origin: center bottom;
+    }
+  }
+
+  @include media( '>=ipad-portrait' ) {
+    display: block;
+  }
+}
+

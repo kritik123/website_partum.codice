@@ -1,0 +1,45 @@
+/* ======================================================================
+ * STACKING
+ * ----------------------------------------------------------------------
+ * Because I can't make any fucking sense of Z-axis stacking otherwise.
+ * ====================================================================== */
+
+section {
+  z-index: 11;
+}
+
+.stripes {
+  z-index: 12;
+}
+
+.site-menu,
+.site-footer,
+#site-logo {
+  z-index: 20;
+}
+
+// Site Intro is on top of everything
+.intro-half {
+  z-index: 30;
+}
+
+.site-intro {
+  z-index: 30;
+
+  &__line {
+    z-index: 31;
+
+    &__inner {
+      z-index: 32;
+
+      &:first-of-type {
+        z-index: 31;
+      }
+    }
+  }
+
+  &__logo {
+    z-index: 33;
+  }
+}
+

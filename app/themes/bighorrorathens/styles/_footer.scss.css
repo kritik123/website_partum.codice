@@ -1,0 +1,193 @@
+.site-footer {
+  width: 100%;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  -webkit-font-smoothing: antialiased;
+
+  color: black;
+
+  a {
+    color: inherit;
+    transition: $trn-fs-linear;
+
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+
+  &__newsletter {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid black;
+
+    input {
+      line-height: 60px;
+      height: 60px;
+      border: 0;
+      border-radius: 0;
+      letter-spacing: 0.1em;
+      padding: 0 1em;
+
+      &:focus {
+        outline: none;
+      }
+
+      &[type="email"] {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 85px;
+        font-size: 12px;
+      }
+
+      &[type="submit"] {
+        font-size: 18px;
+        background: black;
+        color: #999999;
+        font-weight: 700;
+      }
+    }
+
+    .button-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      > * {
+        transition: all 0.125s linear;
+        cursor: pointer;
+      }
+
+      input {
+        width: 100%;
+      }
+
+      &:hover {
+
+        > * {
+          background: #333;
+        }
+      }
+    }
+  }
+
+  .toggle-newsletter {
+    display: none;
+  }
+
+  .social-links {
+    vertical-align: middle;
+
+    > span {
+      display: none;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 18px;
+      padding: 1em 15px;
+      background: black;
+      color: white;
+
+      li {
+        display: inline-block;
+
+        a {
+          display: block;
+          padding: 0 8px;
+        }
+      }
+    }
+  }
+
+  @include media( '>=ipad-portrait' ) {
+    position: fixed;
+    left: 0;
+    bottom: -60px;
+
+    // Until toggled 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(60px);
+
+    &__links {
+      position: absolute;
+      bottom: 84px;
+      right: $fixed-elements-right;
+      margin-right: -8px;
+    }
+
+    .social-links {
+      display: inline-block;
+
+      > span {
+        display: inline-block;
+      }
+
+      .line {
+        display: inline-block;
+        width: 75px;
+        height: 0px;
+        vertical-align: middle;
+        margin: 0 20px;
+        border-top: 1px solid black;
+      }
+
+      ul {
+        display: inline-block;
+        font-size: 12px;
+        padding: 0;
+        background: transparent;
+        color: black;
+      }
+    }
+
+    .toggle-newsletter {
+      display: inline-block;
+      vertical-align: middle;
+      height: 20px;
+      width: 190px;
+    }
+
+
+    &__newsletter {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      input {
+
+        &[type=email] {
+          padding-right: 280px;
+          padding-left: 70px;
+        }
+      }
+
+      .button-wrapper {
+        width: 260px;
+
+        div {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 70px;
+          height: 60px;
+          background: black;
+          transform: skew(-45deg);
+          transform-origin: top center;
+          margin-left: -2px;
+        }
+      }
+    }
+  }
+
+  @include media('<ipad-portrait') {
+    overflow: hidden;
+  }
+}

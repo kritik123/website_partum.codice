@@ -1,0 +1,99 @@
+/* ======================================================================
+ * WELCOME SCREEN
+ * ====================================================================== */
+
+#welcome {
+  background: white;
+  user-select: none;
+
+  .hero-copy {
+    &__inner {
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+
+  @include media('<ipad-portrait') {
+    position: relative;
+
+    .next {
+      display: none;
+    }
+  }
+}
+
+#scene-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*opacity: 0;*/
+
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.welcome-content {
+  justify-content: center;
+
+  &__fill {
+    display: none;
+  }
+
+  &__desc {
+    position: relative;
+    width: 240px;
+  }
+
+  @include media('<ipad-portrait') {
+    padding-top: 20px;
+
+    .buttons-wrapper {
+      display: none;
+    }
+  }
+
+  @include media('>=ipad-portrait') {
+
+    &__desc {
+      width: 450px;
+
+      .t-copy-xl {
+        font-size: 54px;
+      }
+
+      .btn {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @include media('>=ipad-landscape') {
+
+    &__fill {
+      display: block;
+      width: calc(100% - 450px);
+    }
+  }
+}
+
+
+.quote-credit {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+
+  .t-copy-xs{
+    margin-bottom: 0;
+  }
+
+  @include media('<ipad-portrait') {
+    // display: none;
+    right: 15px;
+    bottom: 15px;
+  }
+}

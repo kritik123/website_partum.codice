@@ -1,0 +1,100 @@
+.site-header {
+  padding: 15px;
+
+  @include media('>=ipad-portrait') {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+  }
+}
+
+.site-logo {
+  display: block;
+  width: 35px;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+
+  @include media('>=ipad-portrait') {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 55px;
+
+    // Until shown
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.site-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-font-smoothing: antialiased;
+
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: black;
+    @include clearfix;
+
+    li {
+      float: left;
+
+      &:first-of-type {
+        display: none;
+      }
+
+      a {
+        display: block;
+        font-size: 10px;
+        text-transform: uppercase;
+        padding: 42px 15px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        color: inherit;
+        // color: red;
+
+        span {
+          display: block;
+          padding-top: 0.6em;
+          border-bottom: 2px solid black;
+          transform: scaleX(0);
+        }
+      }
+    }
+  }
+
+  @include media('>=ipad-portrait') {
+    right: 90px;
+
+    // Until toggled
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-60px);
+    margin-right: -40px;
+
+    ul {
+      color: white;
+
+      li {
+
+        &:first-of-type {
+          display: inline-block;
+        }
+
+        a {
+          padding: 27px 40px;
+        }
+      }
+
+    }
+  }
+}

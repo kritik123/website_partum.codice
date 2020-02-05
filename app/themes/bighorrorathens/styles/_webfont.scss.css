@@ -1,0 +1,66 @@
+/*!
+ * @license
+ * MyFonts Webfont Build ID 3217584, 2016-05-12T06:18:03-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: SofiaProMedium by Mostardesign
+ * URL: http://www.myfonts.com/fonts/mostardesign/sofia-pro/medium/
+ * 
+ * Webfont: SofiaProBlack by Mostardesign
+ * URL: http://www.myfonts.com/fonts/mostardesign/sofia-pro/black/
+ * 
+ * Webfont: SofiaProLight by Mostardesign
+ * URL: http://www.myfonts.com/fonts/mostardesign/sofia-pro/light/
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3217584
+ * Licensed pageviews: 10,000
+ * Webfonts copyright: Copyright (c) Olivier Gourvat - Mostardesign Studio, 2012. All rights reserved.
+ * 
+ * © 2016 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3118b0");
+
+
+@font-face {
+  font-family: 'SofiaPro';
+  font-family: 400;
+  src: url('../fonts/webfonts/3118B0_2_0.eot');
+  src: url('../fonts/webfonts/3118B0_2_0.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/webfonts/3118B0_2_0.woff2') format('woff2'),
+       url('../fonts/webfonts/3118B0_2_0.woff') format('woff'),
+       url('../fonts/webfonts/3118B0_2_0.ttf') format('truetype'),
+       url('../fonts/webfonts/3118B0_2_0.svg#wf') format('svg');
+}
+  
+@font-face {
+  font-family: 'SofiaPro';
+  font-weight: 600;
+  src: url('../fonts/webfonts/3118B0_0_0.eot');
+  src: url('../fonts/webfonts/3118B0_0_0.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/webfonts/3118B0_0_0.woff2') format('woff2'),
+       url('../fonts/webfonts/3118B0_0_0.woff') format('woff'),
+       url('../fonts/webfonts/3118B0_0_0.ttf') format('truetype'),
+       url('../fonts/webfonts/3118B0_0_0.svg#wf') format('svg');
+}
+ 
+@font-face {
+  font-family: 'SofiaPro';
+  font-weight: 800;
+  src: url('../fonts/webfonts/3118B0_1_0.eot');
+  src: url('../fonts/webfonts/3118B0_1_0.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/webfonts/3118B0_1_0.woff2') format('woff2'),
+       url('../fonts/webfonts/3118B0_1_0.woff') format('woff'),
+       url('../fonts/webfonts/3118B0_1_0.ttf') format('truetype'),
+       url('../fonts/webfonts/3118B0_1_0.svg#wf') format('svg');
+}
+
+

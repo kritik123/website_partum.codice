@@ -1,0 +1,13 @@
+$fixed-elements-right: 90px;
+
+// Breakpoints
+$breakpoints: (
+  ipad-portrait:    768px, 
+  ipad-landscape:   1024px, 
+  small-laptop:     1280px,
+  normal-laptop:    1366px,
+  normal-desktop:   1920px,
+  large-desktop:    2560px
+);
+
+$trn-fs-linear: all .125s linear;
